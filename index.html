@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día de la Madre</title>
+    <style>
+        body {
+            background-color: #FFC0CB; /* Light pink background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .page {
+            display: none;
+            padding: 20px;
+        }
+        .page.active {
+            display: block;
+        }
+        img {
+            max-width: 30%; /* Responsive image width */
+            height: auto;
+            margin: 10px;
+        }
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="firstPage" class="page active">
+        <h1>¡Feliz Día de la Madre!</h1>
+        <img src="image1.png" alt="Image 1">
+        <img src="image2.png" alt="Image 2">
+        <img src="image3.png" alt="Image 3">
+        <button onclick="showPage('secondPage')">Click aquí</button>
+    </div>
+    <div id="secondPage" class="page">
+        <p>Feliz día a la mejor mamá del mundo. Gracias por todos los días mandarme un mensajito, preocuparte, apoyarme y estar para nosotros. Espero disfrutes tu día y desde la distancia te mando un abrazo y un besito! (seguimos acumulándolos para Septiembre jaja). Te amo</p>
+        <button onclick="showPage('firstPage')">Click aquí</button>
+    </div>
+    <script>
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function(page) {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
